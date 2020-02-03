@@ -1,5 +1,6 @@
 #!/bin/bash
-
+source ./createFunction.sh
+source ./connectFunction.sh
 
 echo "Welcome to our DataBase Management System"
 function mainMenu {
@@ -12,9 +13,9 @@ function mainMenu {
   echo -e "Enter your Choice: "
   read choice
   case $choice in
-    1)  ls ./Bash-Project ; mainMenu;;
+    1)  ls ./dbs ; mainMenu;;
     2)  createDB ;;
-    3)  ConnectDB ;;
+    3)  connectDB ;;
     4)  exit ;;
     *) echo "Wrong Choice" ; mainMenu;
   esac
