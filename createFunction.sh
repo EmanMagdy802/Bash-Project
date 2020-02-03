@@ -3,7 +3,7 @@
 function createDB {
   echo -e "Enter The Name Of Database: "
   read dbName
-  mkdir -p ./dbs/$dbName
+  mkdir ./dbs/$dbName 2> /dev/null
   if [[ $? == 0 ]]
   then
     echo "Database Created Successfully"

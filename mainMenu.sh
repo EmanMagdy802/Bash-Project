@@ -2,6 +2,7 @@
 source ./createFunction.sh
 source ./connectFunction.sh
 
+mkdir -p ./dbs
 echo "Welcome to our DataBase Management System"
 function mainMenu {
   echo -e "\n+---------Main Menu-------------+"
