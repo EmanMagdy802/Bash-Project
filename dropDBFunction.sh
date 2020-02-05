@@ -8,7 +8,7 @@ function dropDB {
   then
     echo "Dropped Successfully"
   else
-    echo "Database Not found"
+    echo "Database $dbName isn't found"
   fi
   mainMenu
 }

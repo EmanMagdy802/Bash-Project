@@ -4,7 +4,8 @@ function connectDB {
   echo -e "Enter Database Name: "
   read dbName
   cd ./dbs/$dbName
-  if [[ $? == 0 ]]; then
+  if [[ $? == 0 ]]
+    then
     echo "Database $dbName Successfully Connected"
     tablesMenu
   else
