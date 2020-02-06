@@ -1,5 +1,6 @@
 #!/bin/bash
 source ./createFunction.sh
+source ./tablesMenu.sh
 source ./connectFunction.sh
 source ./dropDBFunction.sh
 
