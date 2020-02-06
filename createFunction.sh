@@ -10,5 +10,4 @@ function createDB {
   else
     echo "Error, $dbName is already exist"
   fi
-  mainMenu
 }

@@ -10,6 +10,5 @@ function connectDB {
     tablesMenu
   else
     echo "Database $dbName isn't found"
-    mainMenu
   fi
 }

@@ -10,5 +10,4 @@ function dropDB {
   else
     echo "Database $dbName isn't found"
   fi
-  mainMenu
 }
