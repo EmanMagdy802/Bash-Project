@@ -1,5 +1,12 @@
 #!/bin/bash
 source ./createFunction.sh
+source ./showTable.sh
+source ./createTable.sh
+source ./connectToTable.sh
+source ./insertIntoTable.sh
+source ./deleteFromTable.sh
+source ./dropTable.sh
+source ./tablesMenu.sh
 source ./connectFunction.sh
 source ./dropDBFunction.sh
 

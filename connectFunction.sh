@@ -3,7 +3,7 @@
 function connectDB {
   printf "${YELLOW}${bold}Enter Database Name:${NC}"
   read dbName
-  cd ./dbs/$dbName
+  cd ./dbs/$dbName 2> /dev/null
   if [[ $? == 0 ]]
     then
     printf "${BLUE}${bold}Database $dbName Successfully Connected${NC}\n"
