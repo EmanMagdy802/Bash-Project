@@ -1,12 +1,11 @@
 #!/bin/bash
 
 function createTable {
-    error="Error"
-    
     while [ true ]
     do
         echo "Enter table's name"
         read tableName
+        tableName="${tableName,,}"
         case $tableName in
         ("")       
             echo "Error, please enter alphabets"
@@ -54,6 +53,12 @@ function createTable {
         do
             echo "Enter attribute name"
             read attrName
+            attrName="${attrName,,}"
+            if [[ $config =~ $attrName ]]
+            then
+                echo "Error, attribute name already exists"
+                continue
+            fi
             case $attrName in
             ("")       
                 echo "Error, please enter alphabets"
