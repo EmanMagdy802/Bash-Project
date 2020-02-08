@@ -57,15 +57,15 @@ function createTable {
             case $attrName in
             ("")       
                 echo "Error, please enter alphabets"
-                echo "Tip:you can type exit to terminate the creation of the table";;
-                echo ""
+                echo "Tip:you can type exit to terminate the creation of the table"
+                echo "";;
             (*[!a-zA-Z]*) 
                 echo "Error, please enter alphabets "
-                echo "Tip:you can type exit to terminate the creation of the table";;
-                echo ""
+                echo "Tip:you can type exit to terminate the creation of the table"
+                echo "";;
             ("exit")
                 echo "Terminating creation process"
-            return;;
+                return;;
             (*)        
                 break;;
             esac
