@@ -1,14 +1,13 @@
 #!/bin/bash
 
 function createDB {
-  echo -e "Enter The Name Of Database: "
+  printf "${YELLOW}${bold}Enter The Name Of Database:${NC} "
   read dbName
   mkdir ./dbs/$dbName 2> /dev/null
   if [[ $? == 0 ]]
   then
-    echo "Database Created Successfully"
+    printf "${BLUE}${bold}Database Created Successfully${NC}\n"
   else
-    echo "Error, $dbName is already exist"
+    printf "${RED}${bold}$dbName is already exist!${NC}\n"
   fi
-  mainMenu
 }

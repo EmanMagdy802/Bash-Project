@@ -1,15 +1,14 @@
 #!/bin/bash
 
 function connectDB {
-  echo -e "Enter Database Name: "
+  printf "${YELLOW}${bold}Enter Database Name:${NC}"
   read dbName
   cd ./dbs/$dbName
   if [[ $? == 0 ]]
     then
-    echo "Database $dbName Successfully Connected"
+    printf "${BLUE}${bold}Database $dbName Successfully Connected${NC}\n"
     tablesMenu
   else
-    echo "Database $dbName isn't found"
-    mainMenu
+    printf "${RED}${bold}Database $dbName isn't found${NC}\n"
   fi
 }

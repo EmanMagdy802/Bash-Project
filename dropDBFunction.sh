@@ -1,14 +1,13 @@
 #!/bin/bash
 
 function dropDB {
-  echo -e "Enter Database Name: "
+  printf "${YELLOW}${bold}Enter Database Name:${NC}"
   read dbName
   rm -r ./dbs/$dbName 2> /dev/null
   if [[ $? == 0 ]]
   then
-    echo "Dropped Successfully"
+    printf "${BLUE}${bold}Dropped Successfully${NC}\n"
   else
-    echo "Database $dbName isn't found"
+    printf "${RED}${bold}Database $dbName isn't found${NC}\n"
   fi
-  mainMenu
 }

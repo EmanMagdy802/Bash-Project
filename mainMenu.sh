@@ -3,8 +3,15 @@ source ./createFunction.sh
 source ./connectFunction.sh
 source ./dropDBFunction.sh
 
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+RED='\033[0;31m'
+NC='\033[0m'
+bold=$(tput bold)
+
+
 mkdir -p ./dbs
-echo "Welcome to our DataBase Management System"
+printf "${YELLOW}${bold}<<Welcome to our DataBase Management System>>${NC}"
 function mainMenu {
   while [ 1 -eq 1 ]; do
   echo -e "\n+---------Main Menu-------------+"
@@ -14,7 +21,7 @@ function mainMenu {
   echo "| 4. Drop DB                    |"
   echo "| 5. Exit                       |"
   echo "+-------------------------------+"
-  echo -e "Enter your Choice: "
+  printf "${YELLOW}${bold}Enter your Choice: ${NC}"
   read choice
   case $choice in
     1)  ls ./dbs ;;
@@ -22,7 +29,7 @@ function mainMenu {
     3)  connectDB ;;
     4)  dropDB ;;
     5)  exit ;;
-    *) echo "Wrong Choice";
+    *) printf "${RED}${bold}Wrong Choice, please enter Right Choice${NC}";
   esac
   done
 
