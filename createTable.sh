@@ -9,9 +9,13 @@ function createTable {
         read tableName
         case $tableName in
         ("")       
-            echo "Please enter alphabets only or exit to terminate";;
+            echo "Error, please enter alphabets"
+            echo "Tip:you can type exit to terminate the creation of the table"
+            echo "";;
         (*[!a-zA-Z]*) 
-            echo "Please enter alphabets only or exit to terminate";;
+            echo "Error, please enter alphabets"
+            echo "Tip:you can type exit to terminate the creation of the table"
+            echo "";;
         ("exit")
             echo "Terminating creation process"
             return;;
@@ -29,15 +33,16 @@ function createTable {
     while [ true ]; do
     echo "Enter the number of attributes"
     read attrsNumber
-    if [ "$attrNumber" = "exit" ]
-    then 
+    if [ "$attrsNumber" = "exit" ]
+    then
+        echo "Terminating creation process" 
         return;
     fi
     if checkIfNumber $attrsNumber;
     then
         break;
     else
-        echo "Or you can type exit to terminate the creation of the table"
+        echo "Tip:you can type exit to terminate the creation of the table"
         echo ""
     fi
     done
@@ -51,9 +56,13 @@ function createTable {
             read attrName
             case $attrName in
             ("")       
-                echo "Please enter alphabets only or exit to terminate";;
+                echo "Error, please enter alphabets"
+                echo "Tip:you can type exit to terminate the creation of the table";;
+                echo ""
             (*[!a-zA-Z]*) 
-                echo "Please enter alphabets only or exit to terminate";;
+                echo "Error, please enter alphabets "
+                echo "Tip:you can type exit to terminate the creation of the table";;
+                echo ""
             ("exit")
                 echo "Terminating creation process"
             return;;
@@ -79,8 +88,9 @@ function createTable {
                 echo "Terminating the creation process"
                 return
             else
-                echo "You entered wrong type"
-                echo "Type exit to terminate the creation of the table"
+                echo "Error, You entered wrong type"
+                echo "Tip:you can type exit to terminate the creation of the table"
+                echo ""
             fi
         done
     done
@@ -95,7 +105,7 @@ function checkIfNumber {
     re='^[0-9]+$'
     if ! [[ $1 =~ $re ]] ; 
     then
-        echo "You should enter a number"
+        echo "Error, please enter a number"
         return 1
     else
         return 0
