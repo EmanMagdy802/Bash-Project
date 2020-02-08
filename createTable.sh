@@ -3,20 +3,20 @@
 function createTable {
     while [ true ]
     do
-        echo "Enter table's name"
+        printf "${YELLOW}${bold}Enter table's name${NC}\n"
         read tableName
         tableName="${tableName,,}"
         case $tableName in
         ("")       
-            echo "Error, please enter alphabets"
-            echo "Tip:you can type exit to terminate the creation of the table"
+            printf "${RED}${bold}Error, Please Enter Alphabets${NC}\n"
+            echo "${BLUE}${bold}Tip:you can type exit to terminate the creation of the table${NC}\n"
             echo "";;
         (*[!a-zA-Z]*) 
-            echo "Error, please enter alphabets"
-            echo "Tip:you can type exit to terminate the creation of the table"
+            echo "${RED}${bold}Error, please enter alphabets${NC}\n"
+            echo "${BLUE}${bold}Tip:you can type exit to terminate the creation of the table${NC}\n"
             echo "";;
         ("exit")
-            echo "Terminating creation process"
+            echo "${BLUE}${bold}Terminating Creation Process${NC}\n"
             return;;
         (*)        
             break;;
@@ -25,24 +25,24 @@ function createTable {
     
     if [ -f "./$tableName" ];
     then 
-        echo " Error, table exists"
+        printf "${RED}${bold}Error, Table exists${NC}\n"
         return
     fi
     
     while [ true ]; 
     do
-        echo "Enter the number of attributes"
+        printf "${YELLOW}${bold}Enter the Number of Attributes${NC}\n"
         read attrsNumber
         if [ "$attrsNumber" = "exit" ]
         then
-            echo "Terminating creation process" 
+            printf "${BLUE}${bold}Terminating Creation Process${NC}\n" 
             return;
         fi
         if checkIfNumber $attrsNumber;
         then
             break;
         else
-            echo "Tip:you can type exit to terminate the creation of the table"
+            echo "Tip:you can type exit to terminate the creation of the table${NC}\n"
             echo ""
         fi
     done
@@ -52,25 +52,25 @@ function createTable {
     do
         while [ true ]
         do
-            echo "Enter attribute name"
+            printf "${YELLOW}${bold}Enter attribute name${NC}\n"
             read attrName
             attrName="${attrName,,}"
             if [[ $config =~ $attrName ]]
             then
-                echo "Error, attribute name already exists"
+                printf "${RED}${bold}Error, attribute name already exists${NC}\n"
                 continue
             fi
             case $attrName in
             ("")       
-                echo "Error, please enter alphabets"
-                echo "Tip:you can type exit to terminate the creation of the table"
+                printf "${RED}${bold}Error, Please Enter Alphabets${NC}\n"
+                printf "${BLUE}${bold}Tip:You can type exit to terminate the creation of the table${NC}\n"
                 echo "";;
             (*[!a-zA-Z]*) 
-                echo "Error, please enter alphabets "
-                echo "Tip:you can type exit to terminate the creation of the table"
+                printf "${RED}${bold}Error, Please Enter Alphabets${NC}\n"
+                printf "${BLUE}${bold}Tip:You can type exit to terminate the creation of the table${NC}\n"
                 echo "";;
             ("exit")
-                echo "Terminating creation process"
+                printf "${BLUE}${bold}Terminating Creation Process${NC}\n"
                 return;;
             (*)        
                 break;;
@@ -79,7 +79,7 @@ function createTable {
         
         while [ true ]
         do
-            echo "Enter attribute type (text or number)"
+            printf "${YELLOW}${bold}Enter attribute type (text or number)${NC}\n"
             read attrType
             if [ "$attrType" = "text" ] || [ "$attrType" = "number" ]
             then
@@ -90,11 +90,11 @@ function createTable {
                 break
             elif [ "$attrType" = "exit" ]
             then
-                echo "Terminating the creation process"
+                printf "${BLUE}${bold}Terminating the creation process${NC}\n"
                 return
             else
-                echo "Error, You entered wrong type"
-                echo "Tip:you can type exit to terminate the creation of the table"
+                printf "${RED}${bold}Error, You Entered wrong type${NC}\n"
+                printf "${BLUE}${bold}Tip:You can type exit to terminate the creation of the table${NC}\n"
                 echo ""
             fi
         done
@@ -102,7 +102,7 @@ function createTable {
 
     touch $tableName
     echo "${config}" >> $tableName
-    echo "table created succesfully"
+    printf "${BLUE}${bold}Table Created Succesfully${NC}\n"
 
 }
 
@@ -110,7 +110,7 @@ function checkIfNumber {
     re='^[0-9]+$'
     if ! [[ $1 =~ $re ]] ; 
     then
-        echo "Error, please enter a number"
+        printf "${RED}${bold}Error, Please Enter a Number${NC}\n"
         return 1
     else
         return 0

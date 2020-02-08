@@ -11,33 +11,33 @@ function insertIntoTable {
     do
         while [ true ]
         do
-            echo "please enter ${config[$counter]} value"
+            printf "${YELLOW}${bold}Please Enter ${config[$counter]} value:${NC}\n"
             read value
             if [ -z "$value" ]
             then 
-                echo "Error, value mustn't be empty"
-                echo "Tip:you can type exit to terminate the insertion into table"
+                printf "${RED}${bold}Error, value mustn't be empty ${NC}\n"
+                printf "${RED}${bold}Tip:you can type exit to terminate the insertion into table ${NC}\n"
                 echo ""
             else
                 if [ "${config[$counter+1]}" = "number" ]
                 then 
                     if [ "$value" = "exitInsert" ]
                     then
-                        echo "Terminating insertion process" 
+                        printf "${BLUE}${bold}Terminating insertion process${NC}\n" 
                         return;
                     fi
                     if checkIfNumber $value;
                     then
                         break;
                     else
-                        echo "Error, value must be number"    
-                        echo "Tip:you can type exitInsert to terminate the insertion into table"
+                        printf "${RED}${bold}Error, value must be number${NC}\n"    
+                        printf "${RED}${bold}Tip:you can type exitInsert to terminate the insertion into table${NC}\n"
                         echo ""
                     fi
                 else
                     if [ "$value" = "exitInsert" ]
                     then
-                        echo "Terminating insertion process" 
+                        printf "${BLUE}${bold}Terminating insertion process${NC}\n" 
                         return;
                     else
                         break
