@@ -29,21 +29,22 @@ function createTable {
         return
     fi
     
-    while [ true ]; do
-    echo "Enter the number of attributes"
-    read attrsNumber
-    if [ "$attrsNumber" = "exit" ]
-    then
-        echo "Terminating creation process" 
-        return;
-    fi
-    if checkIfNumber $attrsNumber;
-    then
-        break;
-    else
-        echo "Tip:you can type exit to terminate the creation of the table"
-        echo ""
-    fi
+    while [ true ]; 
+    do
+        echo "Enter the number of attributes"
+        read attrsNumber
+        if [ "$attrsNumber" = "exit" ]
+        then
+            echo "Terminating creation process" 
+            return;
+        fi
+        if checkIfNumber $attrsNumber;
+        then
+            break;
+        else
+            echo "Tip:you can type exit to terminate the creation of the table"
+            echo ""
+        fi
     done
     
     config="${attrsNumber}|"
@@ -82,7 +83,6 @@ function createTable {
             read attrType
             if [ "$attrType" = "text" ] || [ "$attrType" = "number" ]
             then
-                error="none"
                 config+=$attrName
                 config+="|"
                 config+=$attrType

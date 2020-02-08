@@ -1,5 +1,6 @@
 #!/bin/bash
 source ./createFunction.sh
+source ./showTable.sh
 source ./createTable.sh
 source ./connectToTable.sh
 source ./insertIntoTable.sh
