@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function connectToTable {
-    printf "${YELLOW}${bold}Enter Table Name: ${NC}\n"
+    printf "${YELLOW}${bold}Enter Table Name: ${NC}"
     read tableName
     if [ -f $tableName ]
     then
@@ -12,6 +12,7 @@ function connectToTable {
         echo "| 3. Delete From Table          |"
         echo "| 4. Back                       |"
         echo "+-------------------------------+"
+		echo ""
         printf "${YELLOW}${bold}Enter your Choice: ${NC}"
         read choice
         case $choice in

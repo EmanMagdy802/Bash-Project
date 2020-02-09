@@ -32,6 +32,7 @@ function mainMenu {
   echo "| 4. Drop DB                    |"
   echo "| 5. Exit                       |"
   echo "+-------------------------------+"
+  echo ""
   printf "${YELLOW}${bold}Enter your Choice: ${NC}"
   read choice
   case $choice in

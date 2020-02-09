@@ -3,7 +3,7 @@
 function connectDB {
 	while [ true ]
     do
-  		printf "${YELLOW}${bold}Enter Database Name:${NC}"
+  		printf "${YELLOW}${bold}Enter Database Name: ${NC}"
   		read -e dbName
 		case $dbName in
         	("")       

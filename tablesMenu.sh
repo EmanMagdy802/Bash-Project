@@ -9,6 +9,7 @@ function tablesMenu {
   echo "| 4. Drop Table                 |"
   echo "| 5. Back To Main Menu          |"
   echo "+-------------------------------+"
+  echo ""
   printf "${YELLOW}${bold}Enter your Choice: ${NC}"
   read choice
   case $choice in
