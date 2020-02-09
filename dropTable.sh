@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function dropTable {
-  printf "${YELLOW}${bold}Enter Table Name: \c"
+  printf "${YELLOW}${bold}Enter Table Name: ${NC}\n"
   read tableName
   rm $tableName 2> /dev/null
   if [[ $? == 0 ]]

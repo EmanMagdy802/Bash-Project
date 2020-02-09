@@ -4,10 +4,10 @@ function deleteFromTable {
 	printf "${YELLOW}${bold}Enter the Number of Record you want to Delete from $tableName: ${NC}"
 	typeset -i recordNo;
 	read recordNo;
-	if ! [[ $recordNo ~= ^[0-9]+$ ]]
+	if  [[ $recordNo == ^[0-9]+$ ]]
 	then
 	printf "${RED}${bold} $recordNO Not valid,Enter valid Number${NC}\n"
-	elif [[ $recordNo -le 0 ]]
+	elif [[ $recordNo -le 2 ]]
 	then 
 	printf "${RED}${bold} $recordNO Not valid,Enter valid Number${NC}\n"
 	else

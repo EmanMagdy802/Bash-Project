@@ -8,15 +8,15 @@ function createTable {
         tableName="${tableName,,}"
         case $tableName in
         ("")       
-            printf "${RED}${bold}Error, Please Enter Alphabets${NC}\n"
-            echo "${BLUE}${bold}Tip:you can type exit to terminate the creation of the table${NC}\n"
+            printf "${RED}${bold}Error: Please Enter Alphabets${NC}\n"
+            printf "${BLUE}${bold}Tip:you can type exit to terminate the creation of the table${NC}\n"
             echo "";;
         (*[!a-zA-Z]*) 
-            echo "${RED}${bold}Error, please enter alphabets${NC}\n"
-            echo "${BLUE}${bold}Tip:you can type exit to terminate the creation of the table${NC}\n"
+            printf "${RED}${bold}Error: please enter alphabets${NC}\n"
+            printf "${BLUE}${bold}Tip:you can type exit to terminate the creation of the table${NC}\n"
             echo "";;
         ("exit")
-            echo "${BLUE}${bold}Terminating Creation Process${NC}\n"
+            printf "${BLUE}${bold}Terminating Creation Process${NC}\n"
             return;;
         (*)        
             break;;
@@ -25,7 +25,7 @@ function createTable {
     
     if [ -f "./$tableName" ];
     then 
-        printf "${RED}${bold}Error, Table exists${NC}\n"
+        printf "${RED}${bold}Error: Table exists${NC}\n"
         return
     fi
     
@@ -42,7 +42,7 @@ function createTable {
         then
             break;
         else
-            echo "Tip:you can type exit to terminate the creation of the table${NC}\n"
+            printf "${BLUE}${bold}Tip:you can type exit to terminate the creation of the table${NC}\n"
             echo ""
         fi
     done
@@ -57,16 +57,16 @@ function createTable {
             attrName="${attrName,,}"
             if [[ $config =~ $attrName ]]
             then
-                printf "${RED}${bold}Error, attribute name already exists${NC}\n"
+                printf "${RED}${bold}Error: attribute name already exists${NC}\n"
                 continue
             fi
             case $attrName in
             ("")       
-                printf "${RED}${bold}Error, Please Enter Alphabets${NC}\n"
+                printf "${RED}${bold}Error: Please Enter Alphabets${NC}\n"
                 printf "${BLUE}${bold}Tip:You can type exit to terminate the creation of the table${NC}\n"
                 echo "";;
             (*[!a-zA-Z]*) 
-                printf "${RED}${bold}Error, Please Enter Alphabets${NC}\n"
+                printf "${RED}${bold}Error: Please Enter Alphabets${NC}\n"
                 printf "${BLUE}${bold}Tip:You can type exit to terminate the creation of the table${NC}\n"
                 echo "";;
             ("exit")
@@ -93,7 +93,7 @@ function createTable {
                 printf "${BLUE}${bold}Terminating the creation process${NC}\n"
                 return
             else
-                printf "${RED}${bold}Error, You Entered wrong type${NC}\n"
+                printf "${RED}${bold}Error: You Entered wrong type${NC}\n"
                 printf "${BLUE}${bold}Tip:You can type exit to terminate the creation of the table${NC}\n"
                 echo ""
             fi
@@ -110,7 +110,7 @@ function checkIfNumber {
     re='^[0-9]+$'
     if ! [[ $1 =~ $re ]] ; 
     then
-        printf "${RED}${bold}Error, Please Enter a Number${NC}\n"
+        printf "${RED}${bold}Error: Please Enter a Number${NC}\n"
         return 1
     else
         return 0

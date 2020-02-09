@@ -23,6 +23,7 @@ function connectToTable {
         esac
         done
     else
-        echo "table $tableName isn't found"
+        #Error msg
+        printf "${RED}${bold}table $tableName doesn't exist${NC}";
     fi
 }

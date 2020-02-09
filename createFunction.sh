@@ -1,8 +1,8 @@
-#!/bin/bash
+2#!/bin/bash
 
 function createDB {
   printf "${YELLOW}${bold}Enter The Name Of Database:${NC} "
-  read dbName
+  read -e dbName
   mkdir ./dbs/$dbName 2> /dev/null
   if [[ $? == 0 ]]
   then
