@@ -4,7 +4,7 @@ function createTable {
     while [ true ]
     do
         printf "${YELLOW}${bold}Enter table's name${NC}\n"
-        read tableName
+        read -e tableName
         tableName="${tableName,,}"
         case $tableName in
         ("")       
