@@ -12,12 +12,16 @@ function insertIntoTable {
         while [ true ]
         do
             printf "${YELLOW}${bold}Please Enter ${GREEN}${bold}${config[$counter]}${NC} ${YELLOW}${bold}value:${NC}\n"
-            read value
+            read -e value
             if [ -z "$value" ]
             then 
                 printf "${RED}${bold}Error: value mustn't be empty ${NC}\n"
                 printf "${RED}${bold}Tip:you can type exit to terminate the insertion into table ${NC}\n"
                 echo ""
+            elif [ "$value" = "exitInsert" ]
+            then
+                printf "${BLUE}${bold}Terminating insertion process${NC}\n" 
+                    return;
             else
                 if [ "${config[$counter+1]}" = "number" ]
                 then 

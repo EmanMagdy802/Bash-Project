@@ -32,7 +32,7 @@ function createTable {
     while [ true ]; 
     do
         printf "${YELLOW}${bold}Enter the Number of Attributes${NC}\n"
-        read attrsNumber
+        read -e attrsNumber
         if [ "$attrsNumber" = "exit" ]
         then
             printf "${BLUE}${bold}Terminating Creation Process${NC}\n" 
@@ -53,7 +53,7 @@ function createTable {
         while [ true ]
         do
             printf "${YELLOW}${bold}Enter attribute name${NC}\n"
-            read attrName
+            read -e attrName
             attrName="${attrName,,}"
             if [[ $config =~ $attrName ]]
             then
@@ -80,7 +80,7 @@ function createTable {
         while [ true ]
         do
             printf "${YELLOW}${bold}Enter attribute type (text or number)${NC}\n"
-            read attrType
+            read -e attrType
             if [ "$attrType" = "text" ] || [ "$attrType" = "number" ]
             then
                 config+=$attrName

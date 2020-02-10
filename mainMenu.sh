@@ -34,7 +34,7 @@ function mainMenu {
   echo "+-------------------------------+"
   echo ""
   printf "${YELLOW}${bold}Enter your Choice: ${NC}"
-  read choice
+  read -e choice
   case $choice in
     1)  ls -1 ./dbs ;;
     2)  createDB ;;

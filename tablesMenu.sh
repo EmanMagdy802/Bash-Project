@@ -11,7 +11,7 @@ function tablesMenu {
   echo "+-------------------------------+"
   echo ""
   printf "${YELLOW}${bold}Enter your Choice: ${NC}"
-  read choice
+  read -e choice
   case $choice in
     1)  ls -p | grep -v /  ;;
     2)  createTable ;;

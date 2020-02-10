@@ -2,7 +2,7 @@
 
 function connectToTable {
     printf "${YELLOW}${bold}Enter Table Name: ${NC}"
-    read tableName
+    read -e tableName
     if [ -f $tableName ]
     then
         while [ true ]; do
@@ -14,7 +14,7 @@ function connectToTable {
         echo "+-------------------------------+"
 		echo ""
         printf "${YELLOW}${bold}Enter your Choice: ${NC}"
-        read choice
+        read -e choice
         case $choice in
             1)  showTable ;;
             2)  insertIntoTable $tableName;;

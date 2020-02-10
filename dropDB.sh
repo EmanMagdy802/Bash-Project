@@ -2,7 +2,7 @@
 
 function dropDB {
   printf "${YELLOW}${bold}Enter Database Name:${NC}"
-  read dbName
+  read -e dbName
   rm -r ./dbs/$dbName 2> /dev/null
   if [[ $? == 0 ]]
   then
