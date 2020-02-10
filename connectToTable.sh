@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function connectToTable {
-    printf "${YELLOW}${bold}Enter Table Name: ${NC}"
+    echo `printf "${YELLOW}${bold}Enter Table Name: ${NC}"`
     read -e tableName
     if [ -f $tableName ]
     then
@@ -13,18 +13,17 @@ function connectToTable {
         echo "| 4. Back                       |"
         echo "+-------------------------------+"
 		echo ""
-        printf "${YELLOW}${bold}Enter your Choice: ${NC}"
+        echo `printf "${YELLOW}${bold}Enter your Choice: ${NC}"`
         read -e choice
         case $choice in
             1)  showTable ;;
             2)  insertIntoTable $tableName;;
             3)  deleteFromTable ;;
             4)  break ;;
-            *) printf "${RED}${bold}Wrong Choice, please enter Right Choice${NC}";
+            *) echo `printf "${RED}${bold}Wrong Choice, please enter Right Choice${NC}"`;;
         esac
         done
     else
-        #Error msg
-        printf "${RED}${bold}table $tableName doesn't exist${NC}";
+        echo `printf "${RED}${bold}Table $tableName doesn't exist${NC}";`
     fi
 }

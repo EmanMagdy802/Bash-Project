@@ -10,7 +10,7 @@ function tablesMenu {
   echo "| 5. Back To Main Menu          |"
   echo "+-------------------------------+"
   echo ""
-  printf "${YELLOW}${bold}Enter your Choice: ${NC}"
+  echo `printf "${YELLOW}${bold}Enter your Choice: ${NC}"`
   read -e choice
   case $choice in
     1)  ls -p | grep -v /  ;;
@@ -19,7 +19,7 @@ function tablesMenu {
     4)  dropTable ;;
     5)  cd ../.. 
         break ;;
-    *) printf "${RED}${bold}Wrong Choice, please enter Right Choice${NC}";
+    *) echo `printf "${RED}${bold}Wrong Choice, please enter Right Choice${NC}"`;;
   esac
   done
 

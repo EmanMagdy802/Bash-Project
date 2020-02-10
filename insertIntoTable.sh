@@ -11,37 +11,35 @@ function insertIntoTable {
     do
         while [ true ]
         do
-            printf "${YELLOW}${bold}Please Enter ${GREEN}${bold}${config[$counter]}${NC} ${YELLOW}${bold}value:${NC}\n"
+            echo `printf "${YELLOW}${bold}Please Enter ${GREEN}${bold}${config[$counter]}${NC} ${YELLOW}${bold}value:${NC}\n"`
             read -e value
             if [ -z "$value" ]
             then 
-                printf "${RED}${bold}Error: value mustn't be empty ${NC}\n"
-                printf "${RED}${bold}Tip:you can type exit to terminate the insertion into table ${NC}\n"
-                echo ""
+                echo `printf "${RED}${bold}Error: value mustn't be empty ${NC}\n"`
+                echo `printf "${RED}${bold}Tip:you can type exit to terminate the insertion into table ${NC}\n"`
             elif [ "$value" = "exitInsert" ]
             then
-                printf "${BLUE}${bold}Terminating insertion process${NC}\n" 
+                echo `printf "${BLUE}${bold}Terminating insertion process${NC}\n"`
                     return;
             else
                 if [ "${config[$counter+1]}" = "number" ]
                 then 
                     if [ "$value" = "exitInsert" ]
                     then
-                        printf "${BLUE}${bold}Terminating insertion process${NC}\n" 
+                        echo `printf "${BLUE}${bold}Terminating insertion process${NC}\n"`
                         return;
                     fi
                     if checkIfNumber $value;
                     then
                         break;
                     else
-                        #printf "${RED}${bold}Error: value must be number${NC}\n"    
-                        printf "${RED}${bold}Tip:you can type exitInsert to terminate the insertion into table${NC}\n"
-                        echo ""
+                        
+                        echo `printf "${RED}${bold}Tip:you can type exitInsert to terminate the insertion into table${NC}\n"`
                     fi
                 else
                     if [ "$value" = "exitInsert" ]
                     then
-                        printf "${BLUE}${bold}Terminating insertion process${NC}\n" 
+                        echo `printf "${BLUE}${bold}Terminating insertion process${NC}\n" `
                         return;
                     else
                         break

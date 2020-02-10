@@ -20,7 +20,7 @@ bold=$(tput bold)
 
 mkdir -p ./dbs
 echo ""
-printf "${YELLOW}${bold}<<Welcome to our DataBase Management System>>${NC}"
+echo`printf "${YELLOW}${bold}<<Welcome to our DataBase Management System>>${NC}"`
 echo ""
 
 function mainMenu {
@@ -33,7 +33,7 @@ function mainMenu {
   echo "| 5. Exit                       |"
   echo "+-------------------------------+"
   echo ""
-  printf "${YELLOW}${bold}Enter your Choice: ${NC}"
+  echo `printf "${YELLOW}${bold}Enter your Choice: ${NC}"`
   read -e choice
   case $choice in
     1)  ls -1 ./dbs ;;
@@ -41,7 +41,7 @@ function mainMenu {
     3)  connectDB ;;
     4)  dropDB ;;
     5)  exit ;;
-    *) printf "${RED}${bold}Wrong Choice, Please Enter Right Choice${NC}";
+    *) echo `printf "${RED}${bold}Wrong Choice, Please Enter Right Choice${NC}"`;
   esac
   done
 
